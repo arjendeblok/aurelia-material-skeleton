@@ -1,0 +1,19 @@
+<template id="${id}">
+    <div class="mdc-slider ${discrete?'mdc-slider--discrete':''} ${markers?'mdc-slider--display-markers':''}" 
+         tabindex="0" role="slider" 
+         aria-valuemin.bind="valuemin" aria-valuemax.bind="valuemax" aria-valuenow="${value}" aria-label="${label}">
+        <div class="mdc-slider__track-container">
+            <div class="mdc-slider__track"></div>
+            <div class="mdc-slider__track-marker-container"></div>
+        </div>
+        <div class="mdc-slider__thumb-container">
+            <div if.bind="discrete" class="mdc-slider__pin">
+                <span class="mdc-slider__pin-value-marker"></span>
+            </div>
+            <svg class="mdc-slider__thumb" width="21" height="21">
+                <circle cx="10.5" cy="10.5" r="7.875"></circle>
+            </svg>
+            <div class="mdc-slider__focus-ring"></div>
+        </div>
+    </div>
+</template>
