@@ -12,9 +12,9 @@ Aurelia validation works on objects, so that is why you will have to pass a mode
 4. `label` is the label shown above the text field;
 5. `type` is the type of the input; default `text`;
 6. `helperText` is a text that is shown when the input has focus and there is no error;
-7. `required` indicates if the input is a required field; is independent on the Aurelia validation required(), so both must be set;
+7. `required` indicates if the input is a required field; is independent of the Aurelia validation required(), so both must be set;
 8. `disabled`: indicates if the input is disabled;
 9. `autofocus`: indicates if the text-field must have autofocus;
 10. `autocomplete`: sets the autocomplete value; default `on`;
-11. `max-length`: set the maximum length that a user can fill in; is independent on the Aurelia validation maxLength(), so both must be set;
+11. `max-length`: set the maximum length that a user can fill in; is independent of the Aurelia validation maxLength(), so both must be set;
 

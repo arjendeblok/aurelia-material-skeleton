@@ -1,10 +1,11 @@
-
 import "@material/typography/mdc-typography.scss";
 import "@material/button/mdc-button.scss";
 import { inject, NewInstance, bindable } from "aurelia-framework";
 import { ValidationRules, ValidationController, ValidateEvent, validateTrigger } from 'aurelia-validation';
 
 import { DemoModel } from './demo-model';
+
+import './demo-app.scss';
 
 @inject(NewInstance.of(ValidationController))
 export class DemoApp {
@@ -17,14 +18,13 @@ export class DemoApp {
     }
 
     bind() {
-        console.log("Login binding");
-
         ValidationRules
             .ensure<DemoModel, string>(r => r.input1)
-            .required().withMessage("Veld 1 is verplicht")
-            .email().withMessage("Veld 1 moet een emailadres zijn")
+            .required().withMessage("Field 1 is required")
+            .email().withMessage("Field 1 must be an email address")
+            .maxLength(25).withMessage("Field 1 has a maximum of 25 characters")
             .ensure<number>(r => r.input2)
-            .required().withMessage("Veld 2 is verplicht")
+            .required().withMessage("Field 2 is required")
             .on(this.demoModel);
     }
 
