@@ -4,10 +4,10 @@
         <mdc-text-field id="input1" label="Field 1" helper-text="Please enter a valid email address" type="text" model.bind="demoModel"
             property="input1" required="true" autofocus="true" maxlength="25"></mdc-text-field>
         <mdc-text-field id="input2" label="Field 2" type="number" model.bind="demoModel" property="input2" required="true"></mdc-text-field>
+        <mdc-slider id="input3" discrete="true" markers="true" value.bind="demoModel.input2" valuemax="10" label="Field 2 via slider"></mdc-slider>
         <div class="action">
             <button type="submit" class="mdc-button mdc-button--raised mdc-button--primary" mdc-ripple 
                     disabled.bind="enableSubmit?'':'disabled'">Submit</button>
-        </div>
         </div>
     </form>
 </template>
