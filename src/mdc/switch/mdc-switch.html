@@ -1,0 +1,11 @@
+<template id="${id}">
+    <div class="mdc-switch">
+        <div class="mdc-switch__track"></div>
+        <div class="mdc-switch__thumb-underlay">
+            <div class="mdc-switch__thumb">
+                <input id="${id}-input" type="checkbox" class="mdc-switch__native-control" role="switch" checked.bind="checked">
+            </div>
+        </div>
+    </div>
+    <label for="${id}-input">${label}</label>
+</template>
