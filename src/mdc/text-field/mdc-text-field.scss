@@ -1,0 +1,19 @@
+@import '@material/textfield/mdc-text-field.scss';
+
+mdc-text-field {
+    display: block; // very important otherwise the browser does not know the display type
+
+    .mdc-text-field {
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .error {
+        //color: $mdc-text-field-error !important;
+        color: red !important;
+    }
+
+    .mdc-text-field-helper-text {
+        padding-bottom: 6px;
+    }
+}
