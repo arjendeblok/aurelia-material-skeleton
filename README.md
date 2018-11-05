@@ -3,6 +3,8 @@ Skeleton for Aurelia with Material Design Components and ASP.NET Core
 
 # Steps
 
+Please execute the following steps. Please do not clone the GIT repository before it is stated in the steps. 
+
 ## Step 1 Installation
 
 Install Aurelia CLI as in https://aurelia.io/docs/build-systems/aurelia-cli/ 
@@ -46,3 +48,29 @@ import "@material/typography/mdc-typography.scss";
 ```
 4. Add the attribute `class=mdc-typography--headline1` to the `h1` tag in the `app.html` file: 
 5. Run the project. The Welcome message should have the Material Design look.
+
+## Step 6 Add MDC Aurelia Components
+
+1. Clone the repository to the root folder
+2. Install Aurelia Validation via `npm install aurelia-validation`
+3. Add following part to the `aurelia.use` in the `main.ts` file
+```javascript
+    .plugin(PLATFORM.moduleName('aurelia-validation'))
+    .feature(PLATFORM.moduleName('mdc/index'))
+```
+4. Let the SASS loader also scan de `node_modules` folder. Change the `webpack.config` file. Look at the `test: /\.scss$/` part and change the `use:` to 
+```javascript
+        use:
+        [{
+          loader: "style-loader" // creates style nodes from JS strings
+        }, {
+          loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "sass-loader", // compiles Sass to CSS
+          options: {
+            includePaths: ["node_modules"]
+          }
+        }],
+```
+5. For the demo change in `main.ts` the reference to `app` to `demo-app/demo-app`
+
