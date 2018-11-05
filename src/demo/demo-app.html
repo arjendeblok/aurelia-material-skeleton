@@ -1,0 +1,13 @@
+<template>
+    <h1 class="mdc-typography--headline5">${message}</h1>
+    <form>
+        <mdc-text-field id="input1" label="Veld 1" helper-text="Vul hier iets in" type="text" model.bind="demoModel"
+            property="input1" required="true" autofocus="true"></mdc-text-field>
+        <mdc-text-field id="input2" label="Veld 2" helper-text="vul hier een getal in" type="number" model.bind="demoModel" property="input2" required="true"></mdc-text-field>
+        <div>
+            <button type="submit" class="mdc-button mdc-button--raised mdc-button--primary" mdc-ripple 
+                    disabled.bind="enableSubmit?'':'disabled'">Inloggen</button>
+        </div>
+        </div>
+    </form>
+</template>
