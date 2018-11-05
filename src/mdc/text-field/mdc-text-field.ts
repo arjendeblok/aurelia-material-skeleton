@@ -12,6 +12,7 @@ export class MdcTextField {
     @bindable type: string = "text";
     @bindable required: boolean = true;
     @bindable disabled: boolean = false;
+    @bindable maxlength: number|undefined = undefined;
     @bindable helperText: string;
     @bindable prefilled: boolean = false;
     @bindable autofocus: boolean = false;
@@ -41,6 +42,9 @@ export class MdcTextField {
         }
         if (inputElement && this.disabled) {
             inputElement.setAttribute("disabled", "disabled");
+        }
+        if (inputElement && this.maxlength) {
+            inputElement.setAttribute("maxlength", this.maxlength.toString());
         }
 
         const textFieldElement = this.element.querySelector(".mdc-text-field");
