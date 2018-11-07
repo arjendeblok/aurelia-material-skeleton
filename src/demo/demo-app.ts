@@ -19,12 +19,12 @@ export class DemoApp {
 
     bind() {
         ValidationRules
-            .ensure<DemoModel, string>(r => r.input1)
-            .required().withMessage("Field 1 is required")
-            .email().withMessage("Field 1 must be an email address")
-            .maxLength(25).withMessage("Field 1 has a maximum of 25 characters")
-            .ensure<number>(r => r.input2)
-            .required().withMessage("Field 2 is required")
+            .ensure<DemoModel, string>(r => r.email)
+            .required().withMessage("e-mail is required")
+            .email().withMessage("Must be a valid email address")
+            .maxLength(25).withMessage("Email has a maximum of 25 characters")
+            .ensure<number>(r => r.numeric)
+            .required().withMessage("Numeric is required")
             .on(this.demoModel);
     }
 

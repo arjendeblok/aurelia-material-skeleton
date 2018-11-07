@@ -1,9 +1,14 @@
 
 export class DemoModel {
-    input1: string = "";
-    input2: number = 0;
+    email: string = "";
+    numeric: number = 1;
+    checked: boolean = false;
+
+    get percentage() : number {
+        return this.numeric / 100;
+    }
 
     get enableSubmit() {
-        return this.input1.length > 0;
+        return this.email.length > 0;
     }
 }
