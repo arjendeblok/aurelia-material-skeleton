@@ -3,7 +3,7 @@
         <input id="${id}-input"
                type="${type}" 
                class="mdc-text-field__input" autofocus.bind="autofocus" autocomplete.bind="autocomplete"
-               value.bind="model[property] & validate">
+               value.bind="model[property] | textFieldInput:type & validate">
         <label id="${id}-label" 
                class="mdc-floating-label ${prefilled?'mdc-floating-label--float-above':''}"
                for="${id}-input">${label}</label>
