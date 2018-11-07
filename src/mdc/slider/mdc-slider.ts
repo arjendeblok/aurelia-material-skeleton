@@ -1,4 +1,4 @@
-import { bindable, autoinject } from 'aurelia-framework';
+import { bindable, autoinject, bindingMode } from 'aurelia-framework';
 import { MDCSlider } from '@material/slider/dist/mdc.slider';
 
 import './mdc-slider.scss';
@@ -9,7 +9,7 @@ export class MdcSlider {
     @bindable label: string;
     @bindable discrete: boolean = false;
     @bindable markers: boolean = false;
-    @bindable value: number = 0;
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) value: number = 0;
     @bindable valuemin: number = 0;
     @bindable valuemax: number = 5;
     @bindable disabled: boolean = false;
