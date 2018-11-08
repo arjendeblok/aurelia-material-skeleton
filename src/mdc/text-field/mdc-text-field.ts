@@ -1,4 +1,4 @@
-import { bindable, autoinject } from 'aurelia-framework';
+import { bindable, autoinject, computedFrom } from 'aurelia-framework';
 import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
 import './mdc-text-field.scss';
 
@@ -14,12 +14,21 @@ export class MdcTextField {
     @bindable disabled: boolean = false;
     @bindable maxlength: number|undefined = undefined;
     @bindable helperText: string;
-    @bindable prefilled: boolean = false;
     @bindable autofocus: boolean = false;
     @bindable autocomplete: string = "on";
     valErrors: string[] = [];
 
     constructor(private element: Element) {
+    }
+
+    get prefilled(): boolean {
+        if(this.textField) {
+            if(document.activeElement == this.textField.input_) 
+                return true;
+
+            return this.model[this.property];
+        }
+        return false;
     }
 
     public created() {
