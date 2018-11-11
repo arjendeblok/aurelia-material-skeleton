@@ -1,6 +1,10 @@
 # aurelia-material-skeleton
 Skeleton for Aurelia with Material Design Components and ASP.NET Core
 
+# Components
+
+See [MDC components](./tree/master/src/mdc).
+
 # Steps
 
 Please execute the following steps. Please do not clone the GIT repository before it is stated in the steps. 
