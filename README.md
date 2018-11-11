@@ -3,7 +3,7 @@ Skeleton for Aurelia with Material Design Components and ASP.NET Core
 
 # Components
 
-See [MDC components](./tree/master/src/mdc).
+See [MDC components](https://github.com/arjendeblok/aurelia-material-skeleton/tree/master/src/mdc).
 
 # Steps
 
