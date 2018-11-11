@@ -1,0 +1,10 @@
+
+@import '@material/select/mdc-select.scss';
+
+mdc-select {
+    display: block;
+
+    > div {
+        width: 100%;
+    }
+}
