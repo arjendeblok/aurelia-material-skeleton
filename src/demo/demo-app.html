@@ -17,6 +17,22 @@
         <div class="progress">
             <mdc-linear-progress open.bind="demoModel.checked" value.bind="demoModel.percentage"></mdc-linear-progress>
         </div>
+        <div>
+            <mdc-select id="selectInput" 
+                        label="Fruit" 
+                        selected.bind="demoModel.selected" 
+                        choose="Select a fruit" 
+                        options="Banana,Orange,Apple">
+            </mdc-select>
+            <mdc-select id="selectInputTemplate" label="Fruit" selected.bind="demoModel.selected">
+                <template replace-part="options">
+                    <option model.bind="null">Select a fruit</option>
+                    <option value="Banana" selected>Banana</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Apple">Apple</option>
+                </template>
+            </mdc-select>
+        </div>
         <div class="action">
             <button type="submit" class="mdc-button mdc-button--raised mdc-button--primary" mdc-ripple 
                     disabled.bind="enableSubmit?'':'disabled'">Submit</button>
