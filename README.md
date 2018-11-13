@@ -41,7 +41,7 @@ If you get an error opening the project file look at the global.json file. Chang
 ## Step 5 Add Material Design
 
 1. Install Material Design components via `npm install material-components-web`
-2. Add the following to the `index.ejs` file after the `<base>` tag:
+2. Add the following to the `~/Views/Shared/_Layout.cshtml` file after the `<title>` tag:
 ```html
      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
