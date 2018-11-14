@@ -3,7 +3,9 @@ Skeleton for Aurelia with Material Design Components and ASP.NET Core
 
 # Components
 
-See [MDC components](https://github.com/arjendeblok/aurelia-material-skeleton/tree/master/src/mdc).
+For a list of components: [MDC components](https://github.com/arjendeblok/aurelia-material-skeleton/tree/master/src/mdc).
+
+For a live demo: [Demo](http://www.arjendeblok.nl/aurelia-material-demo/)
 
 # Steps
 
@@ -78,3 +80,15 @@ import "@material/typography/mdc-typography.scss";
 ```
 5. For the demo change in `main.ts` the reference to `app` to `demo-app/demo-app`
 
+## Step 7 Make Production build
+
+1. Run on command line `npm start build`
+2. Build release version
+
+You can also add the following to your project file to make a WebPack build every time you publish your files:
+```xml
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- <Exec Command="npm install" /> -->
+    <Exec Command="npm start build" />
+  </Target>  
+```
