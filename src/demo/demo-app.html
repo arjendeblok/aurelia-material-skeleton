@@ -1,41 +1,49 @@
 <template>
-    <h1 class="mdc-typography--headline5">${message}</h1>
-    <div>
-        <p>Model info</p>
-        <ul>
-            <li>email: ${demoModel.email} [${typeof(demoModel.email)}]</li>
-            <li>numeric: ${demoModel.numeric} [${typeof(demoModel.numeric)}]</li>
-            <li>checked: ${demoModel.checked} [${typeof(demoModel.checked)}]</li>
-        </ul>
-    </div>
-    <form>
-        <mdc-text-field id="emailInput" label="Email" helper-text="Please enter a valid email address" type="text" model.bind="demoModel"
-            property="email" required="true" autofocus="true" maxlength="25"></mdc-text-field>
-        <mdc-text-field id="numericInput" label="Numeric" type="number" model.bind="demoModel" property="numeric" required="true"></mdc-text-field>
-        <mdc-slider id="input3" discrete="true" markers="true" value.bind="demoModel.numeric" valuemax="100" label="Numeric via slider"></mdc-slider>
-        <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked"></mdc-switch>
-        <div class="progress">
-            <mdc-linear-progress open.bind="demoModel.checked" value.bind="demoModel.percentage"></mdc-linear-progress>
-        </div>
+    <mdc-top-app-bar>
+        <template replace-part="section-start">
+            <span class="mdc-top-app-bar__title">Demo</span>
+        </template>
+    </mdc-top-app-bar>
+    <main class="mdc-top-app-bar--fixed-adjust">
+        <h1 class="mdc-typography--headline5">${message}</h1>
         <div>
-            <mdc-select id="selectInput" 
-                        label="Fruit" 
-                        selected.bind="demoModel.selected" 
-                        choose="Select a fruit" 
-                        options="Banana,Orange,Apple">
-            </mdc-select>
-            <mdc-select id="selectInputTemplate" label="Fruit" selected.bind="demoModel.selected">
-                <template replace-part="options">
-                    <option model.bind="null">Select a fruit</option>
-                    <option value="Banana" selected>Banana</option>
-                    <option value="Orange">Orange</option>
-                    <option value="Apple">Apple</option>
-                </template>
-            </mdc-select>
+            <p>Model info</p>
+            <ul>
+                <li>email: ${demoModel.email} [${typeof(demoModel.email)}]</li>
+                <li>numeric: ${demoModel.numeric} [${typeof(demoModel.numeric)}]</li>
+                <li>checked: ${demoModel.checked} [${typeof(demoModel.checked)}]</li>
+                <li>selected: ${demoModel.selected==null?'null':demoModel.selected} [${typeof(demoModel.selected)}]</li>
+            </ul>
         </div>
-        <div class="action">
-            <button type="submit" class="mdc-button mdc-button--raised mdc-button--primary" mdc-ripple 
-                    disabled.bind="enableSubmit?'':'disabled'">Submit</button>
-        </div>
-    </form>
+        <form>
+            <mdc-text-field id="emailInput" label="Email" helper-text="Please enter a valid email address" type="text" model.bind="demoModel"
+                property="email" required="true" autofocus="true" maxlength="25"></mdc-text-field>
+            <mdc-text-field id="numericInput" label="Numeric" type="number" model.bind="demoModel" property="numeric" required="true"></mdc-text-field>
+            <mdc-slider id="input3" discrete="true" markers="true" value.bind="demoModel.numeric" valuemax="100" label="Numeric via slider"></mdc-slider>
+            <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked"></mdc-switch>
+            <div class="progress">
+                <mdc-linear-progress open.bind="demoModel.checked" value.bind="demoModel.percentage"></mdc-linear-progress>
+            </div>
+            <div>
+                <mdc-select id="selectInput" 
+                            label="Fruit" 
+                            selected.bind="demoModel.selected" 
+                            choose="Select a fruit" 
+                            options="Banana,Orange,Apple">
+                </mdc-select>
+                <mdc-select id="selectInputTemplate" label="Fruit" selected.bind="demoModel.selected">
+                    <template replace-part="options">
+                        <option model.bind="null">Select a fruit</option>
+                        <option value="Banana" selected>Banana</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Apple">Apple</option>
+                    </template>
+                </mdc-select>
+            </div>
+            <div class="action">
+                <button type="submit" class="mdc-button mdc-button--raised mdc-button--primary" mdc-ripple 
+                        disabled.bind="enableSubmit?'':'disabled'">Submit</button>
+            </div>
+        </form>
+    </main>
 </template>
