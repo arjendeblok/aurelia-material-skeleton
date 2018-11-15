@@ -6,7 +6,15 @@
     </mdc-top-app-bar>
     <main class="mdc-top-app-bar--fixed-adjust">
         <h1 class="mdc-typography--headline5">${message}</h1>
-        <div>
+        <mdc-tab-bar selected-tab-index.from-view="selectedTab">
+            <mdc-tab-scroller>
+                <mdc-tab id="tab1" label="Form" active="true">
+                </mdc-tab>
+                <mdc-tab id="tab2" label="Model">
+                </mdc-tab>
+            </mdc-tab-scroller>
+        </mdc-tab-bar>
+        <div id="model-info" if.bind="selectedTab == 1">
             <p>Model info</p>
             <ul>
                 <li>email: ${demoModel.email} [${typeof(demoModel.email)}]</li>
@@ -15,7 +23,7 @@
                 <li>selected: ${demoModel.selected==null?'null':demoModel.selected} [${typeof(demoModel.selected)}]</li>
             </ul>
         </div>
-        <form>
+        <form if.bind="selectedTab == 0">
             <mdc-text-field id="emailInput" label="Email" helper-text="Please enter a valid email address" type="text" model.bind="demoModel"
                 property="email" required="true" autofocus="true" maxlength="25"></mdc-text-field>
             <mdc-text-field id="numericInput" label="Numeric" type="number" model.bind="demoModel" property="numeric" required="true"></mdc-text-field>

@@ -12,6 +12,7 @@ export class DemoApp {
     @bindable demoModel: DemoModel;
     message = 'Hello World!';
     errorMessage: string = "";
+    selectedTab: number = 0;
 
     constructor(private controller: ValidationController) {
         this.demoModel = new DemoModel();
