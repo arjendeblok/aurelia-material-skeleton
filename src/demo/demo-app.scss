@@ -1,5 +1,13 @@
 @import "@material/elevation/mdc-elevation.scss";
 
+html, body {
+    margin: 0;
+}
+
+main {
+    padding: 8px;
+}
+
 .progress {
     margin-top: 8px;
     margin-bottom: 8px;

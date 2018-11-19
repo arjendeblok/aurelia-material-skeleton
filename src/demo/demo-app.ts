@@ -32,4 +32,8 @@ export class DemoApp {
     get enableSubmit() {
         return this.demoModel.enableSubmit;
     }
+
+    openCloseDrawer() {
+        
+    }
 }
