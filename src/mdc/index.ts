@@ -3,6 +3,7 @@ import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 export function configure(config: FrameworkConfiguration) {
   config.globalResources([
     PLATFORM.moduleName("./mdc-ripple"),
+    PLATFORM.moduleName("./drawer/mdc-drawer"),
     PLATFORM.moduleName("./linear-progress/mdc-linear-progress"),
     PLATFORM.moduleName("./slider/mdc-slider"),
     PLATFORM.moduleName("./switch/mdc-switch"),
