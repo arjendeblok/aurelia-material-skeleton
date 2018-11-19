@@ -1,7 +1,7 @@
 
 # Material Design Components
 
-1. [Drawer](/./drawer)
+1. [Drawer](./drawer)
 2. [Linear Progress](./linear-progress)
 3. [Select](./select)
 4. [Slider](./slider)
