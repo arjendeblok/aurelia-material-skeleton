@@ -7,6 +7,7 @@ import './mdc-top-app-bar.scss';
 export class MdcTopAppBar
 {
     topAppBar: MDCTopAppBar;
+    @bindable title: string = null;
     @bindable fixed: boolean = true;
 
     constructor(private element:Element) {
