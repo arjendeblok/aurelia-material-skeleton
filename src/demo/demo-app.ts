@@ -26,10 +26,17 @@ export class DemoApp {
             .maxLength(25).withMessage("Email has a maximum of 25 characters")
             .ensure<number>(r => r.numeric)
             .required().withMessage("Numeric is required")
+            .ensure<boolean>(r => r.checked)
+            .satisfies((value) => value).withMessage("Checked must be checked")
             .on(this.demoModel);
     }
 
     get enableSubmit() {
         return this.demoModel.enableSubmit;
+    }
+
+    async submit() {
+        var result = await this.controller.validate();
+        alert(result.valid);
     }
 }
