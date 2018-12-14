@@ -43,7 +43,7 @@
                     property="email" required="true" autofocus="true" maxlength="25"></mdc-text-field>
                 <mdc-text-field id="numericInput" label="Numeric" type="number" model.bind="demoModel" property="numeric" required="true"></mdc-text-field>
                 <mdc-slider id="input3" discrete="true" markers="true" value.bind="demoModel.numeric" valuemax="100" label="Numeric via slider"></mdc-slider>
-                <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked"></mdc-switch>
+                <mdc-switch id="input4" label="Switch me" model.bind="demoModel" property="checked"></mdc-switch>
                 <div class="progress">
                     <mdc-linear-progress open.bind="demoModel.checked" value.bind="demoModel.percentage"></mdc-linear-progress>
                 </div>
@@ -65,7 +65,8 @@
                 </div>
                 <div class="action">
                     <button type="submit" class="mdc-button mdc-button--raised mdc-button--primary" mdc-ripple 
-                            disabled.bind="enableSubmit?'':'disabled'">Submit</button>
+                            disabled.bind="enableSubmit?'':'disabled'"
+                            click.trigger="submit()">Submit</button>
                     <button class="mdc-button" mdc-ripple>Cancel</button>
                 </div>
             </form>
