@@ -8,8 +8,7 @@ export class MdcSwitch {
     private switch: MDCSwitch;
     @bindable id: string;
     @bindable label: string;
-    @bindable model: object;
-    @bindable property: string = "value";
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) checked: boolean = false;
 
     constructor(private element: Element) {
     }
