@@ -31,6 +31,10 @@ export class DemoApp {
             .on(this.demoModel);
     }
 
+    attached() {
+        this.controller.changeTrigger(validateTrigger.changeOrBlur);
+    }
+
     get enableSubmit() {
         return this.demoModel.enableSubmit;
     }
