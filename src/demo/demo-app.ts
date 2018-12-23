@@ -21,18 +21,17 @@ export class DemoApp {
     bind() {
         ValidationRules
             .ensure<DemoModel, string>(r => r.email)
-            .required().withMessage("e-mail is required")
+              .required().withMessage("e-mail is required")
             .email().withMessage("Must be a valid email address")
-            .maxLength(25).withMessage("Email has a maximum of 25 characters")
+              .maxLength(25).withMessage("Email has a maximum of 25 characters")
             .ensure<number>(r => r.numeric)
-            .required().withMessage("Numeric is required")
+              .required().withMessage("Numeric is required")
             .ensure<boolean>(r => r.checked)
-            .satisfies((value) => value).withMessage("Checked must be checked")
+               .satisfies((value) => value).withMessage("Checked must be checked")
             .on(this.demoModel);
     }
 
     attached() {
-        this.controller.changeTrigger(validateTrigger.changeOrBlur);
     }
 
     get enableSubmit() {

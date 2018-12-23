@@ -16,5 +16,10 @@ export class MdcSwitch {
     attached() {
         const element = this.element.querySelector(".mdc-switch");
         this.switch = new MDCSwitch(element);
+
+        const input = this.element.querySelector("input");
+        input.onblur = (ev:FocusEvent) => {
+            this.element.dispatchEvent(new FocusEvent("blur"));
+        };
     }
 }
