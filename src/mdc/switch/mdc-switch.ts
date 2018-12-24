@@ -8,7 +8,7 @@ export class MdcSwitch {
     private switch: MDCSwitch;
     @bindable id: string;
     @bindable label: string;
-    @bindable({ defaultBindingMode: bindingMode.twoWay }) checked: boolean = false;
+    @bindable({ defaultBindingMode: bindingMode.fromView }) checked: boolean = false;
 
     constructor(private element: Element) {
     }
