@@ -39,9 +39,12 @@
                 </ul>
             </div>
             <form if.bind="selectedTab == 0">
-                <mdc-text-field id="emailInput" label="Email" helper-text="Please enter a valid email address" type="text" model.bind="demoModel"
-                    property="email" required="true" autofocus="true" maxlength="25"></mdc-text-field>
-                <mdc-text-field id="numericInput" label="Numeric" type="number" model.bind="demoModel" property="numeric" required="true"></mdc-text-field>
+                <mdc-text-field id="emailInput" label="Email" helper-text="Please enter a valid email address" type="text" 
+                    value.bind="demoModel.email & validate"
+                    required="true" autofocus="true" maxlength="25" mdc-validation-errors>
+                </mdc-text-field>
+                <mdc-text-field id="numericInput" label="Numeric" type="number" 
+                    value.bind="demoModel.numeric & validate" required="true" mdc-validation-errors></mdc-text-field>
                 <mdc-slider id="input3" discrete="true" markers="true" value.bind="demoModel.numeric" valuemax="100" label="Numeric via slider"></mdc-slider>
                 <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked & validate"></mdc-switch>
                 <div class="progress">  
