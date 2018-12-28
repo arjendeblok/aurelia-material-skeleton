@@ -15,6 +15,13 @@ export class MdcValidationRenderer implements ValidationRenderer {
     bind(context: any) {
         this.controller = this.controllerAccessor();
         this.controller.addRenderer(this);
+
+        const inputElement = this.element.querySelector("input");
+        if (inputElement) {
+            inputElement.onblur = (ev: FocusEvent) => {
+                this.element.dispatchEvent(new FocusEvent("blur"));
+            };
+        }
     }
 
     public render(instruction: RenderInstruction) {
