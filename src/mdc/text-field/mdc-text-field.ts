@@ -9,11 +9,11 @@ export class MdcTextField {
     @bindable label: string; // translate via t="[label]translatekey"
     @bindable({ defaultBindingMode: bindingMode.fromView }) value: string | number | null;
     @bindable type: string = "text";
-    @bindable required: boolean = true;
-    @bindable disabled: boolean = false;
-    @bindable maxlength: number | undefined = undefined;
+    @bindable required: boolean|string = true;
+    @bindable disabled: boolean|string = false;
+    @bindable maxlength: number|string|undefined = undefined;
     @bindable helperText: string;
-    @bindable autofocus: boolean = false;
+    @bindable autofocus: boolean|string = false;
     @bindable autocomplete: string = "on";
     @bindable validationErrors: any[] = [];
 
@@ -41,14 +41,25 @@ export class MdcTextField {
         }
 
         const inputElement = this.element.querySelector("input");
-        if (inputElement && this.required) {
-            inputElement.setAttribute("required", "true");
-        }
-        if (inputElement && this.disabled) {
-            inputElement.setAttribute("disabled", "disabled");
-        }
-        if (inputElement && this.maxlength) {
-            inputElement.setAttribute("maxlength", this.maxlength.toString());
+        if(inputElement) {
+            if (this.required == true || 
+                this.required == "true" || 
+                this.required == "required") {
+                inputElement.setAttribute("required", "");
+            }
+            if (this.disabled == true ||
+                this.disabled == "true" ||
+                this.disabled == "disabled") {
+                inputElement.setAttribute("disabled", "");
+            }
+            if (this.autofocus == true ||
+                this.autofocus == "true" ||
+                this.autofocus == "autofocus") {
+                inputElement.setAttribute("autofocus", "");
+            }
+            if (this.maxlength) {
+                inputElement.setAttribute("maxlength", this.maxlength.toString());
+            }
         }
 
         const textFieldElement = this.element.querySelector(".mdc-text-field");
