@@ -46,7 +46,7 @@
                 <mdc-text-field id="numericInput" label="Numeric" type="number" 
                     value.bind="demoModel.numeric & validate" required="true" mdc-validation-errors></mdc-text-field>
                 <mdc-slider id="input3" discrete="true" markers="true" value.bind="demoModel.numeric" valuemax="100" label="Numeric via slider"></mdc-slider>
-                <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked & validate"></mdc-switch>
+                <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked & validate" required="true" mdc-validation-errors></mdc-switch>
                 <div class="progress">  
                     <mdc-linear-progress open.bind="demoModel.checked" value.bind="demoModel.percentage"></mdc-linear-progress>
                 </div>
