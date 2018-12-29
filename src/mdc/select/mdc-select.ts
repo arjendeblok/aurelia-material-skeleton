@@ -12,8 +12,17 @@ export class MdcSelect
     @bindable({defaultBindingMode: bindingMode.twoWay}) selected: any;
     @bindable choose: string;
     @bindable options: string;
+    @bindable required: boolean|string = true;
+    @bindable helperText: string;
+    @bindable validationErrors: any[] = [];
  
     constructor(private element: Element){   
+    }
+
+    bind() {
+        if(this.required === "true" || this.required === "required") {
+            this.required = true;
+        }
     }
 
     attached()
