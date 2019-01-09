@@ -7,4 +7,12 @@ mdc-select {
     > div {
         width: 100%;
     }
+
+    .mdc-select-helper-text {
+        padding-bottom: 6px;
+    }
+
+    .mdc-select-helper-text--validation-msg {
+        color: red !important;
+    }
 }

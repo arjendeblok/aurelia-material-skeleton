@@ -1,22 +1,24 @@
 <template id="${id}">
-    <div class="mdc-text-field" validation-errors.bind="valErrors">
-        <input id="${id}-input"
-               type="${type}" 
-               class="mdc-text-field__input" autofocus.bind="autofocus" autocomplete.bind="autocomplete"
-               value.bind="model[property] | textFieldInput:type & validate">
-        <label id="${id}-label" 
-               class="mdc-floating-label ${prefilled?'mdc-floating-label--float-above':''}"
-               for="${id}-input">${label}</label>
-        <div class="mdc-line-ripple"></div>
-    </div>
-    <p id="${id}-helpertext-val-msg" 
-       class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent error" 
-       aria-hidden="true"
-       if.bind="valErrors.length>0">
-        <span class="help-block" repeat.for="errorInfo of valErrors">${errorInfo.error.message}</span>
-    </p>
-    <p id="${id}-helpertext" 
-       class="mdc-text-field-helper-text" 
-       aria-hidden="true"
-       if.bind="valErrors.length==0 && helperText">${helperText}</p>
+       <div class="mdc-text-field">
+              <input id="${id}-input" 
+                     type="${type}" 
+                     class="mdc-text-field__input" autocomplete.bind="autocomplete" 
+                     value.bind="value | textFieldInput:type">
+              <label id="${id}-label" 
+                     class="mdc-floating-label ${prefilled?'mdc-floating-label--float-above':''}" 
+                     for="${id}-input">${label}</label>
+              <div class="mdc-line-ripple"></div>
+       </div>
+       <p id="${id}-helpertext-val-msg" 
+          class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
+          aria-hidden="true" 
+          if.bind="validationErrors.length>0">
+          <span class="help-block" repeat.for="error of validationErrors">${error}</span>
+       </p>
+       <p id="${id}-helpertext" 
+          class="mdc-text-field-helper-text" 
+          aria-hidden="true" 
+          if.bind="validationErrors.length==0 && helperText">
+              ${helperText}
+       </p>
 </template>

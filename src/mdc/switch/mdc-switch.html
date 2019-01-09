@@ -7,5 +7,5 @@
             </div>
         </div>
     </div>
-    <label for="${id}-input">${label}</label>
+    <label for="${id}-input" class="${valid?'':'validation-error'}">${label}${required?"*":""}</label>
 </template>

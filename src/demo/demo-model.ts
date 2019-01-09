@@ -1,7 +1,7 @@
 
 export class DemoModel {
     email: string = "";
-    numeric: number = 1;
+    numeric: number = null;
     checked: boolean = false;
     selected: string = "";
 

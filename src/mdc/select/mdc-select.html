@@ -8,7 +8,19 @@
                 </option>
             </template>
         </select>
-        <label id="${id}-label" class="mdc-floating-label">${label}</label>
+        <label id="${id}-label" class="mdc-floating-label">${label}${required?"*":""}</label>
         <div class="mdc-line-ripple"></div>
     </div>
+    <p id="${id}-helpertext-val-msg"
+       class="mdc-select-helper-text mdc-select-helper-text--persistent mdc-select-helper-text--validation-msg"
+       aria-hidden="true" 
+       if.bind="validationErrors.length>0">
+       <span class="help-block" repeat.for="error of validationErrors">${error}</span>
+    </p>
+    <p id="${id}-helpertext" 
+       class="mdc-select-helper-text" 
+       aria-hidden="true" 
+       if.bind="validationErrors.length==0 && helperText">
+           ${helperText}
+    </p>
 </template>

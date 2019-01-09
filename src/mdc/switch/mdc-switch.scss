@@ -2,4 +2,8 @@
 
 mdc-switch {
     display: block;
+
+    label.validation-error {
+        color: red;
+    }
 }

@@ -7,13 +7,12 @@ mdc-text-field {
         width: 100%;
         background-color: transparent;
     }
-
-    .error {
-        //color: $mdc-text-field-error !important;
-        color: red !important;
-    }
-
+    
     .mdc-text-field-helper-text {
         padding-bottom: 6px;
+    }
+
+    .mdc-text-field-helper-text--validation-msg {
+        color: red !important;
     }
 }
