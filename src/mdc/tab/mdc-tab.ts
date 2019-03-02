@@ -1,5 +1,5 @@
 import { autoinject, bindable, bindingMode } from 'aurelia-framework';
-import { MDCTab, MDCTabFoundation } from '@material/tab/dist/mdc.tab';
+import { MDCTab, MDCTabFoundation } from '@material/tab/index';
 
 import '@material/tab/mdc-tab.scss';
 

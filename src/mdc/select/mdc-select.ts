@@ -1,5 +1,5 @@
 import { bindable, bindingMode, autoinject } from 'aurelia-framework';
-import { MDCSelect } from '@material/select/dist/mdc.select';
+import { MDCSelect } from '@material/select/index';
 
 import './mdc-select.scss';
 

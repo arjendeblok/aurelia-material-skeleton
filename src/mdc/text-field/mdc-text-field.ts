@@ -1,5 +1,5 @@
 import { bindable, autoinject, bindingMode } from 'aurelia-framework';
-import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
+import { MDCTextField, MDCTextFieldFoundation } from '@material/textfield/index';
 import './mdc-text-field.scss';
 
 @autoinject()
@@ -22,7 +22,9 @@ export class MdcTextField {
 
     get prefilled(): boolean {
         if (this.textField) {
-            if (document.activeElement == this.textField.input_)
+            var input = this.textField.root_.querySelector("input");
+
+            if (document.activeElement == input)
                 return true;
 
             return this.value != undefined && this.value !== "" && this.value != null;
@@ -69,14 +71,13 @@ export class MdcTextField {
     }
 
     attached() {
-        const textFieldElement = this.element.querySelector(".mdc-text-field");
-        this.textField = new MDCTextField(textFieldElement);
-
+        var foundation = new MDCTextFieldFoundation();
         // override isValid
-        const foundation = this.textField.foundation_;
         foundation.isValid = (): boolean => {
             return this.validationErrors.length == 0;
         };
+        const textFieldElement = this.element.querySelector(".mdc-text-field");
+        this.textField = new MDCTextField(textFieldElement);
     }
 
     detached() {

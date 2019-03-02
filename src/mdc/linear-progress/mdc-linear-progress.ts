@@ -1,5 +1,5 @@
 import { bindable, autoinject } from 'aurelia-framework';
-import { MDCLinearProgress } from '@material/linear-progress/dist/mdc.linearProgress';
+import { MDCLinearProgress } from '@material/linear-progress/index';
 
 import './mdc-linear-progress.scss';
 

@@ -1,5 +1,5 @@
 import { autoinject, bindable } from 'aurelia-framework';
-import { MDCDrawer } from '@material/drawer/dist/mdc.drawer';
+import { MDCDrawer } from '@material/drawer/index';
 
 import './mdc-drawer.scss';
 

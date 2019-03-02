@@ -53,9 +53,12 @@
                 <div>
                     <mdc-select id="selectInput" 
                                 label="Fruit" 
-                                selected.bind="demoModel.selected" 
+                                selected.bind="demoModel.selected & validate" 
                                 choose="Select a fruit" 
-                                options="Banana,Orange,Apple">
+                                options="Banana,Orange,Apple"
+                                required="true"
+                                helper-text="Please select a fruit"
+                                mdc-validation-errors>
                     </mdc-select>
                     <mdc-select id="selectInputTemplate" label="Fruit" selected.bind="demoModel.selected">
                         <template replace-part="options">
@@ -66,6 +69,7 @@
                         </template>
                     </mdc-select>
                 </div>
+                <div>${controller.errors}</div>
                 <div class="action">
                     <button type="submit" class="mdc-button mdc-button--raised mdc-button--primary" mdc-ripple 
                             disabled.bind="enableSubmit?'':'disabled'"
