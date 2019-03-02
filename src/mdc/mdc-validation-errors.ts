@@ -19,13 +19,18 @@ export class MdcValidationRenderer implements ValidationRenderer {
         const inputElement = this.element.querySelector("input");
         if (inputElement) {
             inputElement.onblur = (ev: FocusEvent) => {
-                this.element.dispatchEvent(new FocusEvent("blur"));
+                //var event = new FocusEvent("blur"); NOT WORKING IN IE11
+                var event = document.createEvent("FocusEvent");
+                event.initEvent("blur", false, false);
+                this.element.dispatchEvent(event);
             };
         }
         const selectElement = this.element.querySelector("select");
         if (selectElement) {
             selectElement.onblur = (ev: FocusEvent) => {
-                this.element.dispatchEvent(new FocusEvent("blur"));
+                var event = document.createEvent("FocusEvent");
+                event.initEvent("blur", false, false);
+                this.element.dispatchEvent(event);
             };
         }
     }
