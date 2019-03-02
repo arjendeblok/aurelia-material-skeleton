@@ -1,5 +1,5 @@
 import { autoinject, bindable } from 'aurelia-framework';
-import { MDCTopAppBar } from '@material/top-app-bar/dist/mdc.topAppBar';
+import { MDCTopAppBar } from '@material/top-app-bar/index';
 
 import './mdc-top-app-bar.scss';
 

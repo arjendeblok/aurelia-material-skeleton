@@ -1,6 +1,6 @@
 
-import {bindable, customAttribute, inject, DOM} from 'aurelia-framework';
-import {MDCRipple} from '@material/ripple/dist/mdc.ripple.js';
+import {bindable, customAttribute, inject} from 'aurelia-framework';
+import {MDCRipple} from '@material/ripple/index';
 import '@material/ripple/mdc-ripple.scss';
 
 @customAttribute('mdc-ripple')

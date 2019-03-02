@@ -1,5 +1,5 @@
 import { bindable, bindingMode, autoinject } from 'aurelia-framework';
-import { MDCSwitch } from '@material/switch/dist/mdc.switch';
+import { MDCSwitch } from '@material/switch/index';
 
 import './mdc-switch.scss';
 
