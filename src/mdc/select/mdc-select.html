@@ -1,13 +1,15 @@
 <template  id="${id}">
     <div id="${id}-wrapper" class="mdc-select">
-        <select id="${id}-select" class="mdc-select__native-control" value.bind="selected">
-            <template part="options" replaceable>                
-                <option model.bind="null">${choose}</option>
-                <option repeat.for="option of options.split(',')" model.bind="option">
-                    ${option}
-                </option>
-            </template>
-        </select>
+        <template part="select" replaceable>
+            <select id="${id}-select" class="mdc-select__native-control" value.bind="selected">
+                <template part="options" replaceable>
+                    <option model.bind="null">${choose} Test</option>
+                    <option repeat.for="option of options.split(',')" model.bind="option">
+                        ${option}
+                    </option>
+                </template>
+            </select>
+        </template>        
         <label id="${id}-label" class="mdc-floating-label">${label}${required?"*":""}</label>
         <div class="mdc-line-ripple"></div>
     </div>

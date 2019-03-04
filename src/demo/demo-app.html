@@ -61,11 +61,13 @@
                                 mdc-validation-errors>
                     </mdc-select>
                     <mdc-select id="selectInputTemplate" label="Fruit" selected.bind="demoModel.selected">
-                        <template replace-part="options">
-                            <option model.bind="null">Select a fruit</option>
-                            <option value="Banana" selected>Banana</option>
-                            <option value="Orange">Orange</option>
-                            <option value="Apple">Apple</option>
+                        <template replace-part="select">
+                            <select id="selectInputTemplate-select" class="mdc-select__native-control" value.bind="demoModel.selected">
+                                <option model.bind="null">Select a fruit</option>
+                                <option value="Banana" selected>Banana</option>
+                                <option value="Orange">Orange</option>
+                                <option value="Apple">Apple</option>
+                            </select>
                         </template>
                     </mdc-select>
                 </div>
