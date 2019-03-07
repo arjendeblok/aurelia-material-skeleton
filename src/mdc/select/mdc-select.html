@@ -3,7 +3,7 @@
         <template part="select" replaceable>
             <select id="${id}-select" class="mdc-select__native-control" value.bind="selected">
                 <template part="options" replaceable>
-                    <option model.bind="null">${choose} Test</option>
+                    <option model.bind="null">${choose}</option>
                     <option repeat.for="option of options.split(',')" model.bind="option">
                         ${option}
                     </option>
