@@ -1,0 +1,16 @@
+﻿<template id="${id}">
+  <div class="mdc-text-field text-field mdc-text-field--textarea">
+    <div class="mdc-text-field-character-counter">0 / ${maxlength}"</div>
+    <textarea id="${id}-textarea" class="mdc-text-field__input" maxlength="${maxlength}" cols="${cols}" rows="${rows}" value.bind="value"></textarea>
+    <div class="mdc-notched-outline">
+      <div class="mdc-notched-outline__leading"></div>
+      <div class="mdc-notched-outline__notch">
+        <label id="${id}-label"
+               class="mdc-floating-label ${prefilled?'mdc-floating-label--float-above':''}"
+               for="${id}-textarea">${label}</label>
+
+      </div>
+      <div class="mdc-notched-outline__trailing"></div>
+    </div>
+  </div>
+</template>

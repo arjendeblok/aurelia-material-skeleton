@@ -1,0 +1,23 @@
+@import '@material/textfield/mdc-text-field.scss';
+
+mdc-text-area-field {
+  display: block; // very important otherwise the browser does not know the display type
+  .mdc-text-field--textarea {
+
+    textarea {
+      box-shadow: none;
+    }
+  }
+
+  .mdc-text-field {
+    width: 100%;
+  }
+
+  .mdc-text-field-helper-text {
+    padding-bottom: 6px;
+  }
+
+  .mdc-text-field-helper-text--validation-msg {
+    color: red !important;
+  }
+}

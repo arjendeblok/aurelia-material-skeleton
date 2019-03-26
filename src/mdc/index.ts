@@ -9,6 +9,7 @@ export function configure(config: FrameworkConfiguration) {
     PLATFORM.moduleName("./slider/mdc-slider"),
     PLATFORM.moduleName("./switch/mdc-switch"),
     PLATFORM.moduleName("./text-field/mdc-text-field"),
+    PLATFORM.moduleName("./text-field/mdc-text-area-field"),
     PLATFORM.moduleName("./select/mdc-select"),
     PLATFORM.moduleName("./top-app-bar/mdc-top-app-bar"),
     PLATFORM.moduleName("./tab-bar/mdc-tab-bar"),
