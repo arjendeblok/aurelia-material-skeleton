@@ -14,6 +14,7 @@ export function configure(config: FrameworkConfiguration) {
     PLATFORM.moduleName("./tab-bar/mdc-tab-bar"),
     PLATFORM.moduleName("./tab-scroller/mdc-tab-scroller"),
     PLATFORM.moduleName("./tab/mdc-tab"),
-    PLATFORM.moduleName("./text-field/text-field-input-value-converter")
+    PLATFORM.moduleName("./text-field/text-field-input-value-converter"),
+    PLATFORM.moduleName("./radio/mdc-radio"),
   ]);
 }
