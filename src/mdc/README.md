@@ -3,6 +3,7 @@
 
 1. [Drawer](./drawer)
 2. [Linear Progress](./linear-progress)
+3. [Radio](./radio)
 3. [Select](./select)
 4. [Slider](./slider)
 5. [Switch](./switch)
