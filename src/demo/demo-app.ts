@@ -28,7 +28,9 @@ export class DemoApp {
               .required().withMessage("Numeric is required")
             .ensure<boolean>(r => r.checked)
                .satisfies((value) => value).withMessage("Checked must be checked")
-            .ensure<string>(r => r.selected)
+            .ensure<string>(r => r.selected1)
+               .required().withMessage("A fruit must be selected")
+            .ensure<string>(r => r.selected2)
                .required().withMessage("A fruit must be selected")
             .on(this.demoModel);
     }
