@@ -1,6 +1,7 @@
 # aurelia-material-skeleton
 
-Skeleton for Aurelia with Material Design Components
+Skeleton for Aurelia with Material Design Components.
+See [Aurelia](https://github.com/aurelia) and [Material Components Web](https://github.com/material-components/material-components-web).
 
 # Components
 
