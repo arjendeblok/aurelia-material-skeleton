@@ -16,5 +16,6 @@ export function configure(config: FrameworkConfiguration) {
     PLATFORM.moduleName("./tab/mdc-tab"),
     PLATFORM.moduleName("./text-field/text-field-input-value-converter"),
     PLATFORM.moduleName("./radio/mdc-radio"),
+    PLATFORM.moduleName("./checkbox/mdc-checkbox"),
   ]);
 }

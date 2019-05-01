@@ -1,0 +1,10 @@
+@import "../variables";
+@import '@material/checkbox/mdc-checkbox.scss';
+
+mdc-checkbox {
+    display: block;
+
+    label.validation-error {
+        color: red;
+    }
+}

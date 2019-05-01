@@ -1,12 +1,18 @@
 
 # Material Design Components
 
-1. [Drawer](./drawer)
-2. [Linear Progress](./linear-progress)
-3. [Radio](./radio)
+## Layout
+1. [Top App Bar](./top-app-bar)
+2. [Drawer](./drawer)
+3. [Tab Bar](./tab-bar)
+
+## Forms
+1. [Checkbox](./checkbox)
+2. [Radio](./radio)
 3. [Select](./select)
 4. [Slider](./slider)
 5. [Switch](./switch)
-6. [Tab Bar](./tab-bar)
-7. [Text Field](./text-field)
-8. [Top App Bar](./top-app-bar)
+6. [Text Field](./text-field)
+
+## Other
+1. [Linear Progress](./linear-progress)
