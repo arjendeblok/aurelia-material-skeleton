@@ -18,7 +18,7 @@ Install Aurelia CLI as in https://aurelia.io/docs/build-systems/aurelia-cli/
 
 ## Step 2 Create Project
 
-Create Aurelia project by running `au new --here` on the same folder where you created the ASP.NET Core Project.
+Create Aurelia project by running `au new`.
 
 Choose a project with at least WebPack, TypeScript and SASS or follow the next steps.
 
