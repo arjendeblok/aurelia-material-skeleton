@@ -9,11 +9,11 @@ export class MdcTextField {
     @bindable label: string; // translate via t="[label]translatekey"
     @bindable({ defaultBindingMode: bindingMode.fromView }) value: string | number | null;
     @bindable type: string = "text";
-    @bindable required: boolean|string = true;
-    @bindable disabled: boolean|string = false;
-    @bindable maxlength: number|string|undefined = undefined;
+    @bindable required: boolean | string = true;
+    @bindable disabled: boolean | string = false;
+    @bindable maxlength: number | string | undefined = undefined;
     @bindable helperText: string;
-    @bindable autofocus: boolean|string = false;
+    @bindable autofocus: boolean | string = false;
     @bindable autocomplete: string = "on";
     @bindable validationErrors: any[] = [];
 
@@ -43,9 +43,9 @@ export class MdcTextField {
         }
 
         const inputElement = this.element.querySelector("input");
-        if(inputElement) {
-            if (this.required == true || 
-                this.required == "true" || 
+        if (inputElement) {
+            if (this.required == true ||
+                this.required == "true" ||
                 this.required == "required") {
                 inputElement.setAttribute("required", "");
             }
@@ -71,16 +71,26 @@ export class MdcTextField {
     }
 
     attached() {
-        var foundation = new MDCTextFieldFoundation();
-        // override isValid
-        foundation.isValid = (): boolean => {
-            return this.validationErrors.length == 0;
-        };
         const textFieldElement = this.element.querySelector(".mdc-text-field");
         this.textField = new MDCTextField(textFieldElement);
+        var foundation = (<any>this.textField).foundation_;
+        // override isValid
+        foundation.isValid = (): boolean => {
+            return this.isValid;
+        };
     }
 
     detached() {
         this.textField.destroy();
+    }
+
+    validationErrorsChanged() {
+        if(this.textField) {
+            this.textField.valid = this.isValid;
+        }
+    }
+
+    get isValid() : boolean {
+        return this.validationErrors.length == 0;
     }
 }
