@@ -38,6 +38,15 @@ export class DemoApp {
     attached() {
     }
 
+    clear() {
+      this.demoModel.email = "";
+      this.demoModel.numeric = null;
+      this.demoModel.checked = false;
+      this.demoModel.selected1 = "";
+      this.demoModel.selected2 = "";
+      this.controller.reset();
+    }
+
     get enableSubmit() {
         return this.demoModel.enableSubmit;
     }

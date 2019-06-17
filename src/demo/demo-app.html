@@ -41,7 +41,7 @@
       </div>
       <form if.bind="selectedTab == 0">
         <mdc-text-field id="emailInput" label="Email" helper-text="Please enter a valid email address" type="text"
-                        value.bind="demoModel.email & validate"
+                        value.two-way="demoModel.email & validate"
                         required.bind="true" autofocus="true" maxlength="25" mdc-validation-errors>
         </mdc-text-field>
         <mdc-text-field id="numericInput" label="Numeric" type="number"
@@ -102,6 +102,10 @@
                   disabled.bind="enableSubmit?'':'disabled'"
                   click.trigger="submit()">
             Submit
+          </button>
+          <button type="submit" class="mdc-button mdc-button--raised" mdc-ripple
+                  click.trigger="clear()">
+            Clear
           </button>
           <button class="mdc-button" mdc-ripple>Cancel</button>
         </div>
