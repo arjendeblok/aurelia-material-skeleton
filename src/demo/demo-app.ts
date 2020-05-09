@@ -30,21 +30,12 @@ export class DemoApp {
                .satisfies((value) => value).withMessage("Checked must be checked")
             .ensure<string>(r => r.selected1)
                .required().withMessage("A fruit must be selected")
-            .ensure<string>(r => r.selected2)
+            .ensure<number>(r => r.selected2)
                .required().withMessage("A fruit must be selected")
             .on(this.demoModel);
     }
 
     attached() {
-    }
-
-    clear() {
-      this.demoModel.email = "";
-      this.demoModel.numeric = null;
-      this.demoModel.checked = false;
-      this.demoModel.selected1 = "";
-      this.demoModel.selected2 = "";
-      this.controller.reset();
     }
 
     get enableSubmit() {

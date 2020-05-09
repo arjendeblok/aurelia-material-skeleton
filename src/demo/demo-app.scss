@@ -13,13 +13,40 @@ main {
     margin-bottom: 8px;
 }
 
-.action {
-    margin-top: 16px;
-}
-
 #model-info {
     @include mdc-elevation(3);
 
     padding: 2px 8px 8px 8px;
     margin-bottom: 8px;
+}
+
+form {
+    margin: 8px;
+    width: 640px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.info {
+    padding: 0; margin: 0;
+    margin-top: 4px;
+    color: green;
+    flex: 40% 1 1;
+}
+
+.value {
+    padding: 0; margin: 0;
+    margin-top: 4px;
+    color: green;
+    flex: 20% 1 1;
+}
+
+.errors {
+    color: red;
+}
+
+mdc-text-field, mdc-slider, mdc-switch, mdc-select, .action {
+    flex: calc(40% - 16px) 1 1;
+    padding-right: 16px;
 }

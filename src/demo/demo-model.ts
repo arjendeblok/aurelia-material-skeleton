@@ -6,11 +6,10 @@ interface Fruit {
 
 export class DemoModel {
     email: string = "";
-    numeric: number = null;
+    numeric: number|undefined = undefined;
     checked: boolean = false;
-    selected1: string = "";
-    selected2: string = "";
-    fruits: Fruit[] = [{name:"Banana", value:"banana"}, {name:"Orange", value:"orange"}, {name:"Apple", value:"apple"}, ]
+    selected1: string = null;
+    selected2: number = 102;
 
     get percentage() : number {
         return this.numeric / 100;
