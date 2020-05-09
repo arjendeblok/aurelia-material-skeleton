@@ -15,24 +15,6 @@ export class MdcValidationRenderer implements ValidationRenderer {
     bind(context: any) {
         this.controller = this.controllerAccessor();
         this.controller.addRenderer(this);
-
-        const inputElement = this.element.querySelector("input");
-        if (inputElement) {
-            inputElement.onblur = (ev: FocusEvent) => {
-                //var event = new FocusEvent("blur"); NOT WORKING IN IE11
-                var event = document.createEvent("FocusEvent");
-                event.initEvent("blur", false, false);
-                this.element.dispatchEvent(event);
-            };
-        }
-        const selectElement = this.element.querySelector("select");
-        if (selectElement) {
-            selectElement.onblur = (ev: FocusEvent) => {
-                var event = document.createEvent("FocusEvent");
-                event.initEvent("blur", false, false);
-                this.element.dispatchEvent(event);
-            };
-        }
     }
 
     public unbind() {
