@@ -1,5 +1,8 @@
-@import "../variables";
-@import '@material/textfield/mdc-text-field.scss';
+@use "../variables";
+@use '@material/textfield/mdc-text-field';
+@use "@material/textfield/helper-text";
+
+@include helper-text.helper-text-core-styles;
 
 mdc-text-field {
     display: block; // very important otherwise the browser does not know the display type
@@ -9,11 +12,11 @@ mdc-text-field {
         background-color: transparent;
     }
     
-    .mdc-text-field-helper-text {
+    .mdc-text-field-helper-line {
         padding-bottom: 6px;
     }
 
-    .mdc-text-field-helper-text--validation-msg {
+    .mdc-text-field-helper-line--validation-msg {
         color: red !important;
     }
 }

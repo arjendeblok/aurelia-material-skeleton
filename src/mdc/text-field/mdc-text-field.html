@@ -1,24 +1,30 @@
 <template id="${id}">
-       <div class="mdc-text-field">
-              <input id="${id}-input" 
-                     type="${type}" 
-                     class="mdc-text-field__input" autocomplete.bind="autocomplete" 
-                     value.bind="value | textFieldInput:type">
-              <label id="${id}-label" 
-                     class="mdc-floating-label ${prefilled?'mdc-floating-label--float-above':''}" 
-                     for="${id}-input">${label}</label>
-              <div class="mdc-line-ripple"></div>
-       </div>
-       <p id="${id}-helpertext-val-msg" 
-          class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-          aria-hidden="true" 
-          if.bind="validationErrors.length>0">
-          <span class="help-block" repeat.for="error of validationErrors">${error}</span>
-       </p>
-       <p id="${id}-helpertext" 
-          class="mdc-text-field-helper-text" 
-          aria-hidden="true" 
-          if.bind="validationErrors.length==0 && helperText">
-              ${helperText}
-       </p>
+	<label class="mdc-text-field mdc-text-field--filled ${prefilled?'mdc-text-field--label-floating':''}">
+		<span class="mdc-line-ripple"></span>
+		<input id="${id}-input" 
+	  			 type="${type}" 
+ 					 class="mdc-text-field__input" autocomplete.bind="autocomplete" 
+					 value.bind="value | textFieldInput:type">
+		<span id="${id}-label" 
+					class="mdc-floating-label ${prefilled?'mdc-floating-label--float-above':''}" 
+					for="${id}-input">${label}</span>
+		<span class="mdc-line-ripple"></span>
+	</label>
+	<div id="${id}-helper-text-val-msg" 
+		 class="mdc-text-field-helper-line"
+		 aria-hidden="true" 
+		 if.bind="validationErrors.length>0">
+		<div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg" 
+			 aria-hidden="true">
+			<span class="help-block" repeat.for="error of validationErrors">${error}</span>
+		</div>
+    </div>
+	<div id="${id}-helper-text" 
+		 class="mdc-text-field-helper-line" 
+		 aria-hidden="true" 
+		 if.bind="validationErrors.length==0 && helperText">
+		<div class="mdc-text-field-helper-text">
+			${helperText}
+	</div>
+  </div>
 </template>
