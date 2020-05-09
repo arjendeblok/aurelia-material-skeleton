@@ -1,0 +1,25 @@
+<template id="${id}">
+    <div class="mdc-card">
+        <div class="mdc-card__primary-action">
+            <div if.bind="mediaUrl" class="mdc-card__media
+                mdc-card__media--16-9">
+                <div class="mdc-card__media-content"
+                    style="background-image:
+                    url('${mediaUrl}')"></div>
+            </div>
+            <template part="header" replaceable>
+                <div class="mdc-card-primary" if.bind="cardTitle">
+                    <div class="mdc-card-title mdc-typography mdc-typography--headline6">${cardTitle}</div>
+                    <div class="mdc-card-subtitle mdc-typography mdc-typography--subtitle2">${cardSubtitle}</div>
+                </div>
+                <div class="mdc-card-secondary mdc-typography mdc-typography--body2">                    
+                    <div if.bind="!cardTitle && !cardSubtitle && !mediaUrl">Nothing to show</div>
+                    <template part="content" replaceable>
+                    </template>
+                </div>
+            </template>
+        </div>
+        <template part="card-actions" replaceable>
+        </template>
+    </div>
+</template>
