@@ -1,5 +1,5 @@
-@import "../variables";
-@import '@material/switch/mdc-switch.scss';
+@use "../variables";
+@use '@material/switch/mdc-switch';
 
 mdc-switch {
     display: block;
