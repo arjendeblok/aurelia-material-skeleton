@@ -1,0 +1,6 @@
+@use "../variables";
+@use '@material/tab-bar/mdc-tab-bar';
+
+mdc-tab-bar {
+    display: block;
+}

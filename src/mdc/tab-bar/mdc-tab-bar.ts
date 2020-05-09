@@ -1,7 +1,7 @@
 import { autoinject, bindable, bindingMode } from 'aurelia-framework';
-import { MDCTabBar, MDCTabBarFoundation } from '@material/tab-bar/index';
+import { MDCTabBar, MDCTabBarFoundation } from '@material/tab-bar';
 
-import '@material/tab/mdc-tab.scss';
+import './mdc-tab-bar.scss';
 
 @autoinject()
 export class MdcTabBar {

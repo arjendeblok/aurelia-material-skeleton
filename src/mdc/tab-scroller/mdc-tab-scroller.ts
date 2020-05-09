@@ -1,7 +1,7 @@
 import { autoinject } from 'aurelia-framework';
-import { MDCTabScroller, MDCTabScrollerFoundation } from '@material/tab-scroller/index';
+import { MDCTabScroller, MDCTabScrollerFoundation } from '@material/tab-scroller';
 
-import '@material/tab-scroller/mdc-tab-scroller.scss';
+import './mdc-tab-scroller.scss';
 
 @autoinject()
 export class MdcTabScroller {
