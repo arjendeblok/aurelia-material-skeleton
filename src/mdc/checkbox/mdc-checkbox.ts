@@ -1,5 +1,5 @@
 import { bindable, bindingMode, autoinject } from 'aurelia-framework';
-import { MDCCheckbox } from '@material/checkbox/index';
+import { MDCCheckbox } from '@material/checkbox';
 
 import './mdc-checkbox.scss';
 
