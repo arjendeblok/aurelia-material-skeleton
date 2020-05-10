@@ -13,28 +13,25 @@ For a live demo: [Demo](http://www.arjendeblok.nl/aurelia-material-demo/)
 
 Please execute the following steps. Please do not clone the GIT repository before it is stated in the steps. 
 
-## Step 1 Installation
+## Step 1 Create Project
 
-Install Aurelia CLI as in https://aurelia.io/docs/build-systems/aurelia-cli/ 
-
-## Step 2 Create Project
-
-Create Aurelia project by running `au new`.
+Create Aurelia project by running `npx makes aurelia/v1`.
 
 Choose a project with at least WebPack, TypeScript and SASS or follow the next steps.
 
-1. Choose Custom App
-2. Choose WebPack
-3. Choose any HTTP protocol
-4. Choose any Web platform
+1. Choose Custom Project
+2. Choose App
+3. Choose WebPack
+4. Choose Web or .NET
 5. Choose TypeScript
 6. Choose any HTML template
 7. Choose SASS
 8. Choose any PostCSS processing
 9. Choose any unit test runner
 10. Choose any integration test runner
-12. Choose any code editor
-13. Choose any scaffolding
+11. Choose any code editor
+12. Choose any scaffolding
+13. Choose docker or not
 14. Choose Yes to install dependencies
 
 ## Step 3 Add Material Design
@@ -45,16 +42,12 @@ Choose a project with at least WebPack, TypeScript and SASS or follow the next s
      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
-4. Let the SASS loader also scan de `node_modules` folder. Change the `webpack.config` file. Look at the `test: /\.scss$/` part and change the `use:` to 
-```javascript
-  use: ['style-loader', 'css-loader', { loader: "sass-loader", options: { includePaths: ["node_modules"] } }],
-```
 3. Add the following attribute to top of the `app.ts` file: 
 ```typescript
 import "@material/typography/mdc-typography.scss";
 ```
 4. Add the attribute `class=mdc-typography--headline1` to the `h1` tag in the `app.html` file: 
-5. Run the project with `au run`. The Welcome message should have the Material Design look.
+5. Run the project with `npm start`. The Welcome message should have the Material Design look.
 
 ## Step 4 Add MDC Aurelia Components
 
