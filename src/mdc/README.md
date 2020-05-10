@@ -16,3 +16,4 @@
 
 ## Other
 1. [Linear Progress](./linear-progress)
+2. [Card](./card)
