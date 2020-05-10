@@ -9,8 +9,7 @@ This a Select component that uses a native select
 <mdc-select id="selectInput" 
             label="Fruit" 
             selected.bind="selectedFruit" 
-            choose="Select a fruit" 
-            options="Banana,Orange,Apple">
+            select-options.bind="['Banana', 'Orange', 'Apple'] | mdcSelectOptions">
 </mdc-select>
 ```
 
@@ -19,20 +18,19 @@ This a Select component that uses a native select
 1. `id` is the identifier of the element and must have an unique value (**required**);
 2. `label` is the label shown above the select;
 3. `selected` is the where the selected value is stored;
-4. `choose` is a text that is shown when the select has nothing selected (yet);
-5. `options` is a commma separated list op options
+5. `select-options` is an array of values or an array of key/value pairs where the key is a string and the value can be anything
 6. `helperText` is a text that is shown when the select has focus and there is no error;
 7. `required` indicates if the select is a required field; is independent of the Aurelia validation required(), so both must be set;
 
-You can also not use the `choose` and `options` attributes and make your own list of `option` tags.
+
+Besides strings 
 
 ```html
-<template replace-part="options">
-    <option model.bind="null">Select a fruit</option>
-    <option value="Banana" selected>Banana</option>
-    <option value="Orange">Orange</option>
-    <option value="Apple">Apple</option>
-</template>
+<mdc-select id="selectInput" 
+            label="Fruit" 
+            selected.bind="selectedFruit" 
+            select-options.bind="['Banana', 1, 'Orange', 2, 'Apple', 3 | mdcSelectOptions:true">
+</mdc-select>
 ```
 
 ## Important

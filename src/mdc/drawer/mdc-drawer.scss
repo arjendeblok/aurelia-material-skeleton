@@ -1,7 +1,7 @@
-@import "../variables";
-@import "@material/drawer/mdc-drawer";
-@import "@material/drawer/modal/mdc-drawer-modal.scss";
-@import "@material/list/mdc-list";
+@use "../variables";
+@use "@material/drawer/mdc-drawer";
+@use "@material/drawer/modal/mdc-drawer-modal";
+@use "@material/list/mdc-list";
 
 mdc-drawer {
     display: block;

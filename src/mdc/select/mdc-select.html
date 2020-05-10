@@ -1,28 +1,30 @@
-<template  id="${id}">
-    <div id="${id}-wrapper" class="mdc-select">
-        <template part="select" replaceable>
-            <select id="${id}-select" class="mdc-select__native-control" value.bind="selected">
-                <template part="options" replaceable>
-                    <option model.bind="null">${choose}</option>
-                    <option repeat.for="option of options.split(',')" model.bind="option">
-                        ${option}
-                    </option>
-                </template>
-            </select>
-        </template>        
-        <label id="${id}-label" class="mdc-floating-label">${label}${required?"*":""}</label>
-        <div class="mdc-line-ripple"></div>
+<template id="${id}">
+  <div id="${id}-wrapper" class="mdc-select">
+    <div class="mdc-select__anchor mdc-select__width">
+      <span class="mdc-select__ripple"></span>
+      <span class="mdc-select__selected-text">${selectedText}</span>
+      <i class="mdc-select__dropdown-icon"></i>
+      <span class="mdc-floating-label">${label}</span>
+      <span class="mdc-line-ripple"></span>
     </div>
-    <p id="${id}-helpertext-val-msg"
-       class="mdc-select-helper-text mdc-select-helper-text--persistent mdc-select-helper-text--validation-msg"
-       aria-hidden="true" 
-       if.bind="validationErrors.length>0">
-       <span class="help-block" repeat.for="error of validationErrors">${error}</span>
-    </p>
-    <p id="${id}-helpertext" 
-       class="mdc-select-helper-text" 
-       aria-hidden="true" 
-       if.bind="validationErrors.length==0 && helperText">
-           ${helperText}
-    </p>
+    <div id="${id}-helper-text" 
+      class="mdc-select-helper-text"
+      if.bind="validationErrors.length==0 && helperText">
+        ${helperText}
+    </div>
+    <div id="${id}-helper-text-val-msg"
+		     class="mdc-select-helper-text mdc-select-helper-text--persistent mdc-select-helper-text--validation-msg"
+		     if.bind="validationErrors.length>0">
+        <span class="help-block" repeat.for="error of validationErrors">${error}</span>
+    </div>
+    <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-select__width">
+      <ul class="mdc-list">
+        <li repeat.for="option of selectOptions"
+            class="mdc-list-item" role="option"
+            data-value="${option.index}">
+            <span class="mdc-list-item__text">${option.value}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>

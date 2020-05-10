@@ -1,13 +1,13 @@
 
-import {bindable, customAttribute, inject} from 'aurelia-framework';
-import {MDCRipple} from '@material/ripple/index';
+import {bindable, customAttribute, inject, DOM} from 'aurelia-framework';
+import {MDCRipple} from '@material/ripple';
 import '@material/ripple/mdc-ripple.scss';
 
 @customAttribute('mdc-ripple')
 @inject(Element)
 export class MdcRipple {
     @bindable() unbounded = false;
-    mdcRipple;
+    mdcRipple: MDCRipple;
 
     constructor(private element: Element) { }
 
@@ -17,6 +17,7 @@ export class MdcRipple {
 
     attached() {
         this.element.classList.add('mdc-ripple-surface');
+        this.element.classList.add('mdc-ripple-surface--primary');
     }
 
     detached() {

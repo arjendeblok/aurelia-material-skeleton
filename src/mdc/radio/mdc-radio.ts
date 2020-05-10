@@ -1,6 +1,6 @@
 ﻿import { bindable, bindingMode, autoinject } from 'aurelia-framework';
 import { MDCFormField } from '@material/form-field';
-import { MDCRadio } from '@material/radio/index';
+import { MDCRadio } from '@material/radio';
 
 import './mdc-radio.scss';
 

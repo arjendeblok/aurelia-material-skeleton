@@ -1,6 +1,6 @@
-﻿@import "../variables";
-@import "@material/form-field/mdc-form-field";
-@import "@material/radio/mdc-radio";
+﻿@use "../variables";
+@use "@material/form-field/mdc-form-field";
+@use "@material/radio/mdc-radio";
 
 mdc-radio {
   display: block;

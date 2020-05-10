@@ -1,5 +1,5 @@
 import { bindable, bindingMode, autoinject } from 'aurelia-framework';
-import { MDCSwitch } from '@material/switch/index';
+import { MDCSwitch } from '@material/switch';
 
 import './mdc-switch.scss';
 
@@ -9,7 +9,7 @@ export class MdcSwitch {
     @bindable id: string;
     @bindable label: string
     @bindable required: boolean|string;
-    @bindable({ defaultBindingMode: bindingMode.fromView }) checked: boolean = false;
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) checked: boolean = false;
     @bindable validationErrors: any[] = [];
 
     constructor(private element: Element) {

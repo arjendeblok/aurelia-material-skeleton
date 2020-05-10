@@ -1,5 +1,5 @@
-@import "../variables";
-@import '@material/checkbox/mdc-checkbox.scss';
+@use "../variables";
+@use '@material/checkbox/mdc-checkbox.scss';
 
 mdc-checkbox {
     display: block;

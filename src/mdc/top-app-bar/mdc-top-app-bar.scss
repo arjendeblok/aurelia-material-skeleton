@@ -1,5 +1,6 @@
-@import "../variables";
-@import "@material/top-app-bar/mdc-top-app-bar.scss";
+@use "../variables";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/icon-button/mdc-icon-button";
 
 mdc-top-app-bar {
     display: block;

@@ -1,18 +1,25 @@
-@import "../variables";
-@import '@material/select/mdc-select.scss';
+@use "../variables";
+@use "@material/select/mdc-select";
+@use "@material/list/mdc-list";
+@use "@material/menu/mdc-menu";
+@use "@material/menu-surface/mdc-menu-surface";
 
 mdc-select {
-    display: block;
+  display: block;
 
-    > div {
-        width: 100%;
-    }
+  > div {
+    width: 100%;
+  }
 
-    .mdc-select-helper-text {
-        padding-bottom: 6px;
-    }
+  .mdc-select__width {
+    width: 100%;
+  }
 
-    .mdc-select-helper-text--validation-msg {
-        color: red !important;
-    }
+  .mdc-select-helper-text {
+    padding-bottom: 6px;
+  }
+
+  .mdc-select-helper-text--validation-msg {
+    color: red !important;
+  }
 }

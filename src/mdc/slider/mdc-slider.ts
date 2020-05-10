@@ -1,5 +1,5 @@
 import { bindable, autoinject, bindingMode } from 'aurelia-framework';
-import { MDCSlider } from '@material/slider/index';
+import { MDCSlider } from '@material/slider';
 
 import './mdc-slider.scss';
 
