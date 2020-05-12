@@ -65,18 +65,18 @@ export class MdcSelect {
   }
 
   selectedChanged() {
-    let toSelect = this.select.selectedIndex;
+    let indexToSelect = this.select.selectedIndex;
     for (var option of this.selectOptions) {
       if (option.dataValue == this.selected) {
-        toSelect = option.index;
+        indexToSelect = option.index;
       }
     }
 
-    if (toSelect != this.select.selectedIndex) {
-      // console.log(`mdc-select.selectedChanged ${this.id}: selectedIndex ${this.select.selectedIndex} to ${toSelect} from data-value`, this.selected);
+    if (indexToSelect != this.select.selectedIndex) {
+      // console.log(`mdc-select.selectedChanged ${this.id}: selectedIndex ${this.select.selectedIndex} to ${indexToSelect} from data-value`, this.selected);
 
-      this.select.selectedIndex = toSelect;
-      this.selectedText = this.selectOptions[toSelect].value;
+      this.select.selectedIndex = indexToSelect;
+      this.selectedText = this.selectOptions[indexToSelect].value;
 
       const selectedSet = this.selected !== undefined && this.selected !== null && this.selected !== "";
       if (selectedSet) {

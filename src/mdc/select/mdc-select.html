@@ -21,7 +21,7 @@
       <ul class="mdc-list">
         <li repeat.for="option of selectOptions"
             class="mdc-list-item" role="option"
-            data-value="${option.index}">
+            data-value="${option.dataValue ? option.index.toString() : ''}">
             <span class="mdc-list-item__text">${option.value}</span>
         </li>
       </ul>
