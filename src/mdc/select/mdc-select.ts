@@ -1,7 +1,10 @@
-import { bindable, bindingMode, autoinject } from 'aurelia-framework';
-import { MdcSelectBindOption } from './mdc-select-bind-option';
+import { bindable, bindingMode, autoinject, inject, NewInstance } from 'aurelia-framework';
+import { ValidationController } from 'aurelia-validation';
 import { MDCSelect } from '@material/select';
-import {MDCSelectHelperText} from '@material/select/helper-text';
+import { MDCSelectHelperText } from '@material/select/helper-text';
+import { MdcSelectBindOption } from './mdc-select-bind-option';
+import { MdcValidationRenderer } from 'mdc/mdc-validation-renderer';
+
 import './mdc-select.scss';
 
 @autoinject()
@@ -14,11 +17,11 @@ export class MdcSelect {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) selected: any;
   @bindable required: boolean | string = true;
   @bindable helperText: string;
-  @bindable validationErrors: any[] = [];
+  @bindable validationErrors: string[] = [];
   @bindable selectOptions: MdcSelectBindOption[] = [];
   selectedText: string = "";
 
-  constructor(private element: Element) {
+  constructor(private element: Element, public controller: ValidationController) {
   }
 
   bind() {
@@ -44,6 +47,9 @@ export class MdcSelect {
       handleBlur_.call(foundation);
       this.element.dispatchEvent(new FocusEvent("blur"));
     };
+
+    this.controller.addRenderer(new MdcValidationRenderer(
+      () => this.controller, this.element, this.validationErrors));
 
     this.selectedChanged();
   }
