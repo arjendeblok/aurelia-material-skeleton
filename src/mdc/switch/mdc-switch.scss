@@ -4,7 +4,7 @@
 mdc-switch {
     display: block;
 
-    label.validation-error {
-        color: red;
+    label.validation-error, .mdc-switch-helper-text--validation-msg {
+        color: #b00020;
     }
 }
