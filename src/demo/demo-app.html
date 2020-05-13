@@ -46,20 +46,29 @@
                         value.bind="demoModel.email & validate"
                         required.bind="true" autofocus="true" maxlength="25">
         </mdc-text-field>
-        <div class="value">${demoModel.email}</div>
+        <div class="value">email: ${demoModel.email}</div>
+
         <div class="info">Text field with numeric input</div>
         <mdc-text-field id="numericInput" label="Numeric" type="number"
                         value.bind="demoModel.numeric & validate" required="true"></mdc-text-field>
-        <div class="value">${demoModel.numeric}</div>
+        <div class="value">numeric: ${demoModel.numeric}</div>
+
         <div class="info">Slider that set numeric value 0-100</div>
         <mdc-slider id="input3" discrete="true" markers="true" value.bind="demoModel.numeric" valuemax="100" label="Numeric via slider"></mdc-slider>
-        <div class="value">${demoModel.numeric}</div>
+        <div class="value">numeric: ${demoModel.numeric}</div>
+
         <div class="info">Switch that sets boolean</div>
         <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked & validate" required="true"></mdc-switch>
-        <div class="value">${demoModel.checked}</div>
+        <div class="value">checked: ${demoModel.checked}</div>
+
+        <div class="info">Checkbox that sets boolean</div>
+        <mdc-checkbox id="input4" label="Check me" checked.two-way="demoModel.checked & validate" required="true"></mdc-checkbox>
+        <div class="value">checked: ${demoModel.checked}</div>
+        
         <!-- <div class="progress">
           <mdc-linear-progress open.bind="demoModel.checked" value.bind="demoModel.percentage"></mdc-linear-progress>
         </div> -->
+
         <div class="info">Select</div>
         <mdc-select id="selectInput"
                     label="Fruit"
@@ -68,7 +77,7 @@
                     required="true"
                     helper-text="Please select a fruit">
         </mdc-select>
-        <div class="value">${demoModel.selected1}</div>
+        <div class="value">selected1: ${demoModel.selected1}</div>
 
         <div class="info">Select with number store</div>
         <mdc-select id="selectInput2"
@@ -78,7 +87,7 @@
                     required="true"
                     helper-text="Please select a fruit">
         </mdc-select>
-        <div class="value">${demoModel.selected2}</div>
+        <div class="value">selected2: ${demoModel.selected2}</div>
 
         <div class="info">All errors</div>
         <div class="errors">
