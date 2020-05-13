@@ -32,7 +32,3 @@ Besides strings
             select-options.bind="['Banana', 1, 'Orange', 2, 'Apple', 3 | mdcSelectOptions:true">
 </mdc-select>
 ```
-
-## Important
-
-You need to add the `mdc-validation-errors` custom attribute and an `validate` value behavior on the `value` attribute to make the validation work.

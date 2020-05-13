@@ -10,7 +10,7 @@ import './demo-app.scss';
 @inject(NewInstance.of(ValidationController))
 export class DemoApp {
     @bindable demoModel: DemoModel;
-    message = 'Hello World!';
+    message = 'Demo Application MDC Components';
     errorMessage: string = "";
     selectedTab: number = 0;
 
@@ -20,12 +20,19 @@ export class DemoApp {
 
     bind() {
         ValidationRules
-            .ensure<DemoModel, string>(r => r.email)
-              .required().withMessage("e-mail is required")
+            .ensure<DemoModel, string>(r => r.name)
+              .required().withMessage("Name is required")
+              .minLength(5)
+              .maxLength(25)
+              .then()
+              .matches(/.+ .+/).withMessage("Name must contain first and last name")
+            .ensure(r => r.email)
+              .required().withMessage("e-Mail is required")
             .email().withMessage("Must be a valid email address")
               .maxLength(25).withMessage("Email has a maximum of 25 characters")
             .ensure<number>(r => r.numeric)
               .required().withMessage("Numeric is required")
+              .between(1, 100).withMessage("Numeric must be between 1 and 100")
             .ensure<boolean>(r => r.checked)
                .satisfies((value) => value).withMessage("Checked must be checked")
             .ensure<string>(r => r.selected1)
@@ -44,6 +51,8 @@ export class DemoApp {
 
     async submit() {
         var result = await this.controller.validate();
-        alert(result.valid);
+        if(!result.valid) {
+          alert('input validation failed; see error list');
+        }
     }
 }

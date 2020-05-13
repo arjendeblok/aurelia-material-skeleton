@@ -1,2 +1,6 @@
 @use "../variables";
 @use '@material/slider/mdc-slider';
+
+mdc-slider {
+    display: block;
+}

@@ -10,8 +10,7 @@ This a TextField component that integrates with Aurelia validation.
     id="emailInput" 
     label="Email"
     value.bind="email & validate"
-    required="true" maxlength="25" 
-    mdc-validation-errors>
+    required="true" maxlength="25">
 </mdc-text-field>
 ```
 
@@ -27,7 +26,3 @@ This a TextField component that integrates with Aurelia validation.
 8. `autofocus`: indicates if the text-field must have autofocus;
 9. `autocomplete`: sets the autocomplete value; default `on`;
 10. `max-length`: set the maximum length that a user can fill in; is independent of the Aurelia validation maxLength(), so both must be set;
-
-## Important
-
-You need to add the `mdc-validation-errors` custom attribute and an `validate` value behavior on the `value` attribute to make the validation work.

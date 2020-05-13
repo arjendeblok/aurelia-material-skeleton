@@ -24,7 +24,7 @@ export class MdcSlider {
     }
 
     attached() {
-        var item = this.element.getElementsByClassName("mdc-slider")[0];
+        var item = this.element.querySelector('.mdc-slider');
         this.slider = new MDCSlider(item);
 
         this.slider.listen('MDCSlider:change', () => {
@@ -34,6 +34,14 @@ export class MdcSlider {
         if (this.disabled) {
             item.setAttribute("aria-disabled", "true");
         }
+
+        setInterval(() => {
+            // if slider was not visible when attached then the rect variable of foundation was not set correctly
+            var s = <any> this.slider;
+            if(s.foundation_.rect_.width == 0) {
+                s.foundation_.rect_ = s.foundation_.adapter_.computeBoundingRect();
+            }
+        }, 200);
     }
 
     add() {

@@ -3,9 +3,17 @@
         <div class="mdc-switch__track"></div>
         <div class="mdc-switch__thumb-underlay">
             <div class="mdc-switch__thumb">
-                <input id="${id}-input" type="checkbox" class="mdc-switch__native-control" role="switch" checked.two-way="checked"/>
+                <input id="${id}-input" type="checkbox"
+                    class="mdc-switch__native-control" role="switch" checked.two-way="checked" />
             </div>
         </div>
     </div>
     <label for="${id}-input" class="${valid?'':'validation-error'}">${label}${required?"*":""}</label>
+    <div id="${id}-switch-text-val-msg"
+        if.bind="validationErrors.length>0">
+        <div class="mdc-switch-helper-text--validation-msg"
+            aria-hidden="true">
+            <span repeat.for="error of validationErrors">${error}</span>
+        </div>
+    </div>
 </template>
