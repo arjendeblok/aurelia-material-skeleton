@@ -5,6 +5,7 @@ interface Fruit {
 }
 
 export class DemoModel {
+    name: string = "";
     email: string = "";
     numeric: number|undefined = undefined;
     checked: boolean = false;
@@ -16,6 +17,6 @@ export class DemoModel {
     }
 
     get enableSubmit() {
-        return this.email.length > 0;
+        return this.name.length > 0;
     }
 }

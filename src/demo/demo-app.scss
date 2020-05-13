@@ -1,6 +1,7 @@
 @import "@material/elevation/mdc-elevation.scss";
 
-html, body {
+html,
+body {
     margin: 0;
 }
 
@@ -8,45 +9,49 @@ main {
     padding: 8px;
 }
 
-.progress {
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-#model-info {
-    @include mdc-elevation(3);
-
-    padding: 2px 8px 8px 8px;
-    margin-bottom: 8px;
-}
-
 form {
     margin: 8px;
     width: 640px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
 
-.info {
-    padding: 0; margin: 0;
-    margin-top: 4px;
-    color: green;
-    flex: 40% 1 1;
-}
+    div.tab-content {
+        height: 360px;
+        div.input-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 8px;
 
-.value {
-    padding: 0; margin: 0;
-    margin-top: 4px;
-    color: green;
-    flex: 20% 1 1;
+            .info {
+                color: green;
+                flex: 40% 1 1;
+            }
+
+            .value {
+                color: green;
+                flex: 20% 1 1;
+            }
+
+            mdc-text-field,
+            mdc-slider,
+            mdc-switch,
+            mdc-select,
+            mdc-checkbox {
+                flex: calc(40% - 16px) 1 1;
+                padding-right: 16px;
+                height: auto;
+            }
+        }
+    }
 }
 
 .errors {
     color: red;
 }
 
-mdc-text-field, mdc-slider, mdc-switch, mdc-select, mdc-checkbox, .action {
+.errors,
+.action {
     flex: calc(40% - 16px) 1 1;
     padding-right: 16px;
+    height: auto;
 }
