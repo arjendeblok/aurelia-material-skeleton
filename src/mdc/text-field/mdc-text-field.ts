@@ -1,5 +1,8 @@
 import { bindable, autoinject, bindingMode } from 'aurelia-framework';
+import { ValidationController } from 'aurelia-validation';
 import { MDCTextField, MDCTextFieldFoundation, MDCTextFieldHelperText } from '@material/textfield';
+import { MdcValidationRenderer } from 'mdc/mdc-validation-renderer';
+
 import './mdc-text-field.scss';
 
 @autoinject()
@@ -17,9 +20,9 @@ export class MdcTextField {
     @bindable helperText: string;
     @bindable autofocus: boolean|string = false;
     @bindable autocomplete: string = "on";
-    @bindable validationErrors: any[] = [];
+    @bindable validationErrors: string[] = [];
 
-    constructor(private element: Element) {
+    constructor(private element: Element, public controller: ValidationController) {
     }
 
     get prefilled(): boolean {
@@ -85,6 +88,9 @@ export class MdcTextField {
         };
 
         const helperText = new MDCTextFieldHelperText(this.element.querySelector('.mdc-text-field-helper-text'));
+
+        this.controller.addRenderer(new MdcValidationRenderer(
+            () => this.controller, this.element, this.validationErrors));      
     }
 
     detached() {

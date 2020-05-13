@@ -44,18 +44,18 @@
         <mdc-text-field id="emailInput" label="Email" type="text"
                         helper-text="Please enter a valid email address" 
                         value.bind="demoModel.email & validate"
-                        required.bind="true" autofocus="true" maxlength="25" mdc-validation-errors>
+                        required.bind="true" autofocus="true" maxlength="25">
         </mdc-text-field>
         <div class="value">${demoModel.email}</div>
         <div class="info">Text field with numeric input</div>
         <mdc-text-field id="numericInput" label="Numeric" type="number"
-                        value.bind="demoModel.numeric & validate" required="true" mdc-validation-errors></mdc-text-field>
+                        value.bind="demoModel.numeric & validate" required="true"></mdc-text-field>
         <div class="value">${demoModel.numeric}</div>
         <div class="info">Slider that set numeric value 0-100</div>
         <mdc-slider id="input3" discrete="true" markers="true" value.bind="demoModel.numeric" valuemax="100" label="Numeric via slider"></mdc-slider>
         <div class="value">${demoModel.numeric}</div>
         <div class="info">Switch that sets boolean</div>
-        <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked & validate" required="true" mdc-validation-errors></mdc-switch>
+        <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked & validate" required="true"></mdc-switch>
         <div class="value">${demoModel.checked}</div>
         <!-- <div class="progress">
           <mdc-linear-progress open.bind="demoModel.checked" value.bind="demoModel.percentage"></mdc-linear-progress>
@@ -66,8 +66,7 @@
                     select-options.bind="['Banana', 'Orange', 'Apple'] | mdcSelectOptions"
                     selected.bind="demoModel.selected1 & validate"
                     required="true"
-                    helper-text="Please select a fruit"
-                    mdc-validation-errors>
+                    helper-text="Please select a fruit">
         </mdc-select>
         <div class="value">${demoModel.selected1}</div>
 
@@ -77,8 +76,7 @@
                     select-options.bind="['', null, 'Banana', 101, 'Orange', 102, 'Apple', 103] | mdcSelectOptions:true"
                     selected.bind="demoModel.selected2 & validate"
                     required="true"
-                    helper-text="Please select a fruit"
-                    mdc-validation-errors>
+                    helper-text="Please select a fruit">
         </mdc-select>
         <div class="value">${demoModel.selected2}</div>
 
