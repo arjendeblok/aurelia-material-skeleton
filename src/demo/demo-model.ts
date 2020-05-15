@@ -8,7 +8,8 @@ export class DemoModel {
     name: string = "";
     email: string = "";
     numeric: number|undefined = undefined;
-    checked: boolean = false;
+    checked1: boolean = false;
+    checked2: boolean = false;
     selected1: string = null;
     selected2: number = 102;
 

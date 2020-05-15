@@ -42,7 +42,8 @@
             <li>name: ${demoModel.name} [${typeof(demoModel.name)}]</li>
             <li>email: ${demoModel.email} [${typeof(demoModel.email)}]</li>
             <li>numeric: ${demoModel.numeric} [${typeof(demoModel.numeric)}]</li>
-            <li>checked: ${demoModel.checked} [${typeof(demoModel.checked)}]</li>
+            <li>checked1: ${demoModel.checked1} [${typeof(demoModel.checked1)}]</li>
+            <li>checked2: ${demoModel.checked2} [${typeof(demoModel.checked2)}]</li>
             <li>selected1: ${demoModel.selected1==null?'null':demoModel.selected1} [${typeof(demoModel.selected1)}]</li>
             <li>selected2: ${demoModel.selected2==null?'null':demoModel.selected2} [${typeof(demoModel.selected2)}]</li>
           </ul>
@@ -82,13 +83,13 @@
         <div class="tab-content" show.bind="selectedTab == 2">
           <div class="input-row">
             <div class="info">Switch</div>
-          <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked & validate" required="true"></mdc-switch>
-          <div class="value">checked: ${demoModel.checked}</div>
+          <mdc-switch id="input4" label="Switch me" checked.two-way="demoModel.checked1 & validate" required="true"></mdc-switch>
+          <div class="value">checked1: ${demoModel.checked1}</div>
           </div>
           <div class="input-row">
             <div class="info">Checkbox</div>
-            <mdc-checkbox id="input4" label="Check me" checked.two-way="demoModel.checked & validate" required="true"></mdc-checkbox>
-            <div class="value">checked: ${demoModel.checked}</div>
+            <mdc-checkbox id="input4" label="Check me" checked.two-way="demoModel.checked2 & validate" required="true"></mdc-checkbox>
+            <div class="value">checked2: ${demoModel.checked2}</div>
           </div>
         </div>
         <div class="tab-content" show.bind="selectedTab == 3">
