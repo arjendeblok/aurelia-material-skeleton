@@ -14,4 +14,11 @@
         </div>
         <label for="${id}-input" class="${valid?'':'validation-error'}">${label}${required?"*":""}</label>
     </div>
+    <div id="${id}-checkbox-text-val-msg"
+            if.bind="validationErrors.length>0">
+        <div class="mdc-checkbox-helper-text--validation-msg"
+            aria-hidden="true">
+            <span repeat.for="error of validationErrors">${error}</span>
+        </div>
+    </div>
 </template>
