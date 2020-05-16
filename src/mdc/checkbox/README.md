@@ -8,8 +8,7 @@
     id="checkbox-input" 
     label="Check me" 
     checked.bind="checked & validate" 
-    required="true" 
-    mdc-validation-errors>
+    required="true">
 </mdc-checkbox>
 ```
 
@@ -19,7 +18,3 @@
 2. `label` holds the label;
 3. `checked` is the boolean value of the checkbox;
 4. `required` indicates if the input is a required field; is independent of the Aurelia validation required(), so both must be set.
-
-## Important
-
-You need to add the `mdc-validation-errors` custom attribute and an `validate` value behavior on the `value` attribute to make the validation work.
