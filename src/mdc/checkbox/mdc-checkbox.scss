@@ -4,7 +4,7 @@
 mdc-checkbox {
     display: block;
 
-    label.validation-error {
-        color: red;
+    label.validation-error, .mdc-checkbox-helper-text--validation-msg {
+        color: #b00020;
     }
 }
